@@ -2,12 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Productos</title>
+  
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link href="https://fonts.cdnfonts.com/css/effendi" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css"> 
+   
+
 </head>
 <body>
-        <h1>Bienvenidos a JS</h1>
-<h3>Segunda Pre Entrega JavaScript</h3>
-<script src="../Preentrega2BrizuelaJS/js/main.js"></script>
+  <!----------------Fonfo Animado------------------------>
+ <div class="bg"></div>
+ <div class="bg bg2"></div>
+ <div class="bg bg3"></div> 
+
+<!--------------------Titulo-------------->
+ <div id="titulo">
+ <h1>Titulo 1</h1>
+ </div>
+ <div id="titulo2">
+    <h1>Titulo 2</h1>
+    </div>
+<button id="boton1">Registro</button>
+<br>
+ <div id="contenedor"></div>
+
+<!--------------------Formulario-------------->
+<div id="form" class="cajaform">
+        
+    <Form action="#" method="get" enctype="application/x-www-form-urlencoded">
+<br>
+    <label class="texform" for="nombre">Nombre</label>
+
+        <input class="texform"type="text" name="nombre" id="nombre" required> 
+
+    <label class="texform"for="apellido">Apellido</label>
+
+        <input class="texform"type="text" name="apellido" id="apellido"required>
+
+    <label class="texform"for="email">Email</label>
+
+        <input class="texform"type="email" name="email" id="imail" required>
+
+    <label class="texform">Mensaje</label>
+   <div class="texform ">
+       <textarea name="Mensaje" id="" cols="17" rows="4">...escribe aqui</textarea> 
+   </div>
+    <label class="texform "for="talles">Talles</label>
+      <select class=""name="talles">
+            <option value="XL">XL</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="S">S</option>
+  
+        </select>
+       <br> 
+    <label class="texform" for="cantidad">Cantidad</label>
+
+        <input class=" " type="number" name="cantidad" min="0" max="12" id=""><br>
+
+        
+    <label class="texform " for="Forma de envio">Forma de Envio</label>
+        
+        <div class="texform ">Envio por correo</div>
+
+        <input class="texform"type="radio" name="envio" id="envio">
+
+        <div class="texform">Retiro en Local</div>
+
+        <input class="texform "type="radio" name="envio" id="retiro en local"><br>
+
+        <input class="boton-animacion centrado"type="submit" value="Enviar"/>
+
+        <input class="boton-animacion centrado"type="reset" value="Limpiar formulario"/>
+ </Form>
+
+</div>
+<div id="mensaje" class="texform"></div>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>
