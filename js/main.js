@@ -25,6 +25,7 @@ function comfirmacionUsuario (){
 
   if (confirmaUsuario == "Y") {
   alert (`Bienvenido ${nombreUsuario} ${apellidoUsuario}`);
+
   }else{
   alert ("Usuario incorrecto");
 }
@@ -63,7 +64,14 @@ productos.forEach(item => {
 /* Boton de registro */
 let boton = document.getElementById("boton1");
 
-boton.addEventListener("click",nombreApellido);
+boton.addEventListener("click", nombreApellido);
+// boton.addEventListener("click",() =>{
+//   Swal.fire(
+//     'Good job!',
+//     'You clicked the button!',
+//     'success'
+//   )
+// } );
 let usuarioNombre;
 let Nombre = localStorage.getItem("usuario");
 let usuarioApellido;
@@ -83,11 +91,27 @@ let inputs =e.target.children;
   console.log(inputs[17].value);
   console.log(inputs[19].value);
  
-
-  let div = document.createElement("mensaje");
-  mensaje.innerHTML = `
-  <h3> GRACIAS!! A la brevedad nos contactaremos contigo</h3>
-  `
-mensaje.append(div);
-
+  // Swal.fire(
+  //   'Gracias!',
+  //   'A la brevedad nos contactaremos contigo!',
+  //   'success');
+//   let div = document.createElement("mensaje");
+//   mensaje.innerHTML = `
+//   <h3> GRACIAS!! A la brevedad nos contactaremos contigo</h3>
+//   `
+// mensaje.append(div);
+Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Formulario enviado',
+  showConfirmButton: false,
+  timer: 1500
+});})
+formulario.addEventListener("reset", () =>{
+ Swal.fire({
+    position: 'top-end',
+    icon: 'error',
+    title: 'Formulario borrado',
+    showConfirmButton: false,
+    timer: 1500});
 });
