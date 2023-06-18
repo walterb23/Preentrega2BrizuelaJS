@@ -58,6 +58,7 @@ productos.forEach(item => {
  <p> Nombre : ${item.nombre}</p>
  <p> Precio : ${item.precio}</p>
  <img class="carousel-img" src= ${item.direccion} class="d-block w-100" alt=${item.descripcion}>
+ <button id="botonElegir${item.id}">Seleccionar</button>
   `
   contenedor.append(div);
 });
@@ -106,7 +107,8 @@ Swal.fire({
   title: 'Formulario enviado',
   showConfirmButton: false,
   timer: 1500
-});})
+});
+})
 formulario.addEventListener("reset", () =>{
  Swal.fire({
     position: 'top-end',
@@ -115,3 +117,22 @@ formulario.addEventListener("reset", () =>{
     showConfirmButton: false,
     timer: 1500});
 });
+
+let botonElegir = document.getElementById(`botonElegir${item.id}`)
+botonElegir.addEventListener('click', ()=>{
+  console.log(`Elegido ${item.nombre}`);
+  Toastify({
+   text: `Agregaste ${item.nombre} a tu carrito con exito`,
+   duration: 1500,
+   destination: "https://github.com/apvarun/toastify-js",
+   newWindow: true,
+   close: true,
+   gravity: "botton",
+   position : "right",
+   stopOnFocus: true,
+   style: {
+    background: "linear-gradient(to rigth, #8a2be2, #d87093)"
+   },
+   onClick: function(){}
+}) .showToast()
+})
