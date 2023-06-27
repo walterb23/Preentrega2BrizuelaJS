@@ -42,26 +42,29 @@ let titulo2 = document.getElementById("titulo2");
 titulo2.innerHTML = "<h1>Vida-Productos</h1>";
 titulo2.className = "bannerMixin";
 
+
 /* Arreglo para crear las etiquetas de los productos */
 let contenedor = document.getElementById("contenedor");
-const productos = [
-{id: 1 , nombre: "Top Mujer", precio: 3500 ,direccion: "../productos/producto1.jpg" , descripcion:"Calsa corta mujer"},
-{id: 2 , nombre: "Calsa corta Mujer", precio: 2800 ,direccion: "../productos/producto2.jpg" , descripcion:"Calsa corta mujer"},
-{id: 3 , nombre: "Musculosas Mujer", precio: 3000 ,direccion: "../productos/producto3.jpg" , descripcion:"Calsa corta mujer"},
-{id: 4 , nombre: "Short/Top Mujer", precio: 2900 ,direccion: "../productos/producto4.jpg" , descripcion:"Calsa corta mujer"},
-{id: 5 , nombre: "Short Hombre", precio: 5600 ,direccion: "../productos/producto5.jpg" , descripcion:"Calsa corta mujer"},   
-];
-productos.forEach(item => {
-  let div = document.createElement("div");
+
+traerProductos()
+.then((response) => {
+  response.forEach(producto =>{
+     let div = document.createElement("div");
   div.innerHTML = `
-  <h3 class="">ID : ${item.id}</h3>
- <p> Nombre : ${item.nombre}</p>
- <p> Precio : ${item.precio}</p>
- <img class="carousel-img" src= ${item.direccion} class="d-block w-100" alt=${item.descripcion}>
- <button id="botonElegir${item.id}">Seleccionar</button>
-  `
-  contenedor.append(div);
-});
+  <h3 >ID : ${producto.id}</h3>
+ <p> Nombre : ${producto.nombre}</p>
+ <p> Precio : ${producto.precio}</p>
+ <img class="carousel-img" src= ${producto.img} class="d-block w-100" alt=${producto.descripcion}>
+ <button id="botonElegir${producto.id}">Seleccionar</button>
+  `;
+contenedor.append(div);
+  });
+} )
+.catch((error) => console.log (error))
+// productos.forEach(item => {
+ 
+//   
+// });
 /* Boton de registro */
 let boton = document.getElementById("boton1");
 
