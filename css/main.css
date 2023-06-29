@@ -79,4 +79,22 @@ font-size: 500%;
     color: rgb(0, 0, 0);
     text-decoration: none;
   }
-  
+  #productos {
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 24px;
+    row-gap: 24px;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 48px;
+    color: aqua;
+  }
+  .contenedorProducto {
+    border: solid 1px red;
+    border-radius: 20px;
+    text-align: center;
+    padding: 16px;
+    width: max-content;
+    color: aquamarine;
+  }

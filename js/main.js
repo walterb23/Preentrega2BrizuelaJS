@@ -47,16 +47,20 @@ titulo2.className = "bannerMixin";
 let contenedor = document.getElementById("contenedor");
 
 traerProductos()
+
 .then((response) => {
+
   response.forEach(producto =>{
      let div = document.createElement("div");
   div.innerHTML = `
+  <div class = "contenedorProducto">
   <h3 >ID : ${producto.id}</h3>
  <p> Nombre : ${producto.nombre}</p>
  <p> Precio : ${producto.precio}</p>
  <img class="carousel-img" src= ${producto.img} class="d-block w-100" alt=${producto.descripcion}>
  <button id="botonElegir${producto.id}">Seleccionar</button>
   `;
+ 
 contenedor.append(div);
   });
 } )
