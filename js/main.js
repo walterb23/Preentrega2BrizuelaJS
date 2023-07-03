@@ -1,35 +1,6 @@
-//Pido nombre de Usuario
-function nombreApellido (){
-   nombreUsuario = prompt("Bienvenido!VIDA-Indumentaria ¿Como te llamas?");
-   apellidoUsuario = prompt("Ingresa tu apellido");
-  localStorage.setItem("usuario",nombreUsuario);
-  localStorage.setItem("usuarioApellido",apellidoUsuario);
-   validarUsuario();
-   comfirmacionUsuario ();
-}
-//Valido Nombre que no sea un strem vacio
-function validarUsuario(){
-  while (nombreUsuario == "" && apellidoUsuario == "" || nombreUsuario != "" && apellidoUsuario == "" || nombreUsuario == "" && apellidoUsuario != ""  ){
-  alert ("No ingresaste ningun usuario");
-  nombreApellido ();
-}
-}
-//Compruevo que sea mayor de edad
-function mayorEdad (){
-  edadUsuario = parseInt(prompt("Solo ingresaras si eres mayor de edad! ¿Cuantos años tienes?"));
 
-}
-function comfirmacionUsuario (){
 
-  let confirmaUsuario = prompt(`El nombre ingresado es ${nombreUsuario} ${apellidoUsuario} responde Y/N`);
 
-  if (confirmaUsuario == "Y") {
-  alert (`Bienvenido ${nombreUsuario} ${apellidoUsuario}`);
-
-  }else{
-  alert ("Usuario incorrecto");
-}
-}
 
 
 /* Titulo */
@@ -45,13 +16,14 @@ titulo2.className = "bannerMixin";
 
 /* Arreglo para crear las etiquetas de los productos */
 let contenedor = document.getElementById("contenedor");
-
+contenedor.className = 'productosDentrocontenedor' 
 traerProductos()
 
 .then((response) => {
 
   response.forEach(producto =>{
      let div = document.createElement("div");
+  
   div.innerHTML = `
   <div class = "contenedorProducto">
   <h3 >ID : ${producto.id}</h3>
@@ -61,25 +33,39 @@ traerProductos()
  <button id="botonElegir${producto.id}">Seleccionar</button>
   `;
  
-contenedor.append(div);
+contenedor.appendChild(div);
+
+let botonElegir = document.getElementById(`botonElegir${producto.id}`)
+botonElegir.addEventListener('click', ()=>{
+  console.log(`Elegido ${producto.nombre}`);
+  Toastify({
+   text: `Agregaste ${producto.nombre} a tu carrito con exito`,
+   duration: 1500,
+   destination: "https://github.com/apvarun/toastify-js",
+   newWindow: true,
+   close: true,
+   gravity: "botton",
+   position : "right",
+   stopOnFocus: true,
+   style: {
+    background: "linear-gradient(to rigth, #8a2be2, #d87093)"
+   },
+   onClick: function(){}
+}) .showToast()
+})
+
   });
 } )
 .catch((error) => console.log (error))
 // productos.forEach(item => {
  
+
 //   
 // });
 /* Boton de registro */
 let boton = document.getElementById("boton1");
 
-boton.addEventListener("click", nombreApellido);
-// boton.addEventListener("click",() =>{
-//   Swal.fire(
-//     'Good job!',
-//     'You clicked the button!',
-//     'success'
-//   )
-// } );
+
 let usuarioNombre;
 let Nombre = localStorage.getItem("usuario");
 let usuarioApellido;
@@ -99,15 +85,7 @@ let inputs =e.target.children;
   console.log(inputs[17].value);
   console.log(inputs[19].value);
  
-  // Swal.fire(
-  //   'Gracias!',
-  //   'A la brevedad nos contactaremos contigo!',
-  //   'success');
-//   let div = document.createElement("mensaje");
-//   mensaje.innerHTML = `
-//   <h3> GRACIAS!! A la brevedad nos contactaremos contigo</h3>
-//   `
-// mensaje.append(div);
+
 Swal.fire({
   position: 'top-end',
   icon: 'success',
@@ -125,21 +103,3 @@ formulario.addEventListener("reset", () =>{
     timer: 1500});
 });
 
-let botonElegir = document.getElementById(`botonElegir${item.id}`)
-botonElegir.addEventListener('click', ()=>{
-  console.log(`Elegido ${item.nombre}`);
-  Toastify({
-   text: `Agregaste ${item.nombre} a tu carrito con exito`,
-   duration: 1500,
-   destination: "https://github.com/apvarun/toastify-js",
-   newWindow: true,
-   close: true,
-   gravity: "botton",
-   position : "right",
-   stopOnFocus: true,
-   style: {
-    background: "linear-gradient(to rigth, #8a2be2, #d87093)"
-   },
-   onClick: function(){}
-}) .showToast()
-})

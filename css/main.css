@@ -79,7 +79,8 @@ font-size: 500%;
     color: rgb(0, 0, 0);
     text-decoration: none;
   }
-  #productos {
+    
+.productosDentrocontenedor{
 
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -97,4 +98,7 @@ font-size: 500%;
     padding: 16px;
     width: max-content;
     color: aquamarine;
+  }
+  body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
   }
