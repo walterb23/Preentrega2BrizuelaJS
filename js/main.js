@@ -21,44 +21,82 @@ traerProductos()
 
 .then((response) => {
 
-  response.forEach(producto =>{
+   response.forEach(producto =>{
      let div = document.createElement("div");
-  
-  div.innerHTML = `
+   div.className= 'container-items'
+   div.innerHTML = `
+
   <div class = "contenedorProducto">
   <h3 >ID : ${producto.id}</h3>
  <p> Nombre : ${producto.nombre}</p>
  <p> Precio : ${producto.precio}</p>
  <img class="carousel-img" src= ${producto.img} class="d-block w-100" alt=${producto.descripcion}>
- <button id="botonElegir${producto.id}">Seleccionar</button>
+ <button  id="botonElegir${producto.id}">Seleccionar</button>
   `;
- 
-contenedor.appendChild(div);
 
-let botonElegir = document.getElementById(`botonElegir${producto.id}`)
-botonElegir.addEventListener('click', ()=>{
-  console.log(`Elegido ${producto.nombre}`);
-  Toastify({
-   text: `Agregaste ${producto.nombre} a tu carrito con exito`,
-   duration: 1500,
-   destination: "https://github.com/apvarun/toastify-js",
-   newWindow: true,
-   close: true,
-   gravity: "botton",
-   position : "right",
-   stopOnFocus: true,
-   style: {
-    background: "linear-gradient(to rigth, #8a2be2, #d87093)"
-   },
-   onClick: function(){}
-}) .showToast()
-})
+contenedor.appendChild(div);
+}) })
+
+// let botonElegir = document.getElementById(`botonElegir${produco.id}`)
+// botonElegir.addEventListener('click', ()=>{
+//   console.log(`Elegido ${produco.nombre}`);
+//   Toastify({
+//    text: `Agregaste ${produco.nombre} a tu carrito con exito`,
+//    duration: 1500,
+//    destination: "https://github.com/apvarun/toastify-js",
+//    newWindow: true,
+//    close: true,
+//    gravity: "botton",
+//    position : "right",
+//    stopOnFocus: true,
+//    style: {
+//     background: "linear-gradient(to rigth, #8a2be2, #d87093)"
+//    },
+//    onClick: function(){}
+// }) .showToast()
+// })
+let botonElegir = document.getElementById(`botonElegir${produco.id}`)
+botonElegir.addEventListener('click',()=>{
+
+ 
+  const infoProduct = {
+ nombre: producto.querySelector('h2').textContent,
+ precio: producto.querySelector('p').textContent,
+  };
+ const exits = allProducts.some(
+  producto => producto.nombre === infoProduct.nombre
+);
+ 
+
+if (exits) {
+  const products = allProducts.map(producto => {
+    if (producto.nombre === infoProduct.nombre) {
+      productoprecio++;
+      return producto;
+    } else {
+      return producto;
+    
+    }
+  });
+
+
+
+  
+
+ 
+ 
+ 
+allProducts = [...products];
+} else {
+  allProducts = [...allProducts, infoProduct];
+}
+showHTML();
+
 
   });
-} )
-.catch((error) => console.log (error))
-// productos.forEach(item => {
- 
+//.catch((error) => console.log (error))
+// // productos.forEach(item => {
+
 
 //   
 // });
@@ -85,7 +123,7 @@ let inputs =e.target.children;
   console.log(inputs[17].value);
   console.log(inputs[19].value);
  
-
+})
 Swal.fire({
   position: 'top-end',
   icon: 'success',
@@ -93,7 +131,7 @@ Swal.fire({
   showConfirmButton: false,
   timer: 1500
 });
-})
+
 formulario.addEventListener("reset", () =>{
  Swal.fire({
     position: 'top-end',
