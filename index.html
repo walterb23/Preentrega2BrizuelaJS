@@ -2,148 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
-  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carrito</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://fonts.cdnfonts.com/css/effendi" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css"> 
-   
-
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
-<body>
-  <!----------------Fonfo Animado------------------------>
+<body> 
+ <!----------------Fonfo Animado------------------------>
  <div class="bg"></div>
  <div class="bg bg2"></div>
  <div class="bg bg3"></div> 
 
 <!--------------------Titulo-------------->
- <div id="titulo">
- <h1>Titulo 1</h1>
 
-
- </div>
- 
-
- <div id="titulo2">
-    <h1>Titulo 2</h1>
-    </div>
-
- <div class="container-icon">
-    <div class="container-cart-icon">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="icon-cart"
-        >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-            />
-        </svg>
-        <div class="count-products">
-            <span id="contador-productos">0</span>
-        </div>
-    </div>
-
-    <div class="container-cart-products hidden-cart">
-        <div class="row-product hidden">
-            <div class="cart-product">
-                <div class="info-cart-product">
-                    <span class="cantidad-producto-carrito">1</span>
-                    <p class="titulo-producto-carrito">Zapatos Nike</p>
-                    <span class="precio-producto-carrito">$80</span>
-                </div>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="icon-close"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                    />
-                </svg>
+   
+<header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            <div class="">
+                <div id="titulo">
+                     <h1>Titulo 1</h1>
+                   </div>
+                    <div id="titulo2">
+                          <h1>Titulo 2</h1>
+                       </div>
             </div>
-        </div>
+            <div class="two columns u-pull-right">
+                <ul>
+                    <li class="submenu">
+                            <img src="img/cart.png" id="img-carrito">
+                            <div id="carrito">
+                                    
+                                    <table id="lista-carrito" class="u-full-width">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th>Cantidad</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
 
-        <div class="cart-total hidden">
-            <h3>Total:</h3>
-            <span class="total-pagar">$200</span>
-        </div>
-        <p class="cart-empty">El carrito está vacío</p>
+                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </div> 
     </div>
-</div>
-<button id="boton1">Registro</button>
-<br>
- <div id="contenedor"></div>
+    </header>
+<div id="lista-cursos" class="container">
+     <h1 id="encabezado" class="encabezado"></h1>
+     <div class="row">
+        <div id="contenedor"></div>
+    </div> <!--.row-->
+</div>  
 
-<!--------------------Formulario-------------->
-<div id="form" class="cajaform">
-        
-    <Form action="#" method="get" enctype="application/x-www-form-urlencoded">
-<br>
-    <label class="texform" for="nombre">Nombre</label>
-
-        <input class="texform"type="text" name="nombre" id="nombre" required> 
-
-    <label class="texform"for="apellido">Apellido</label>
-
-        <input class="texform"type="text" name="apellido" id="apellido"required>
-
-    <label class="texform"for="email">Email</label>
-
-        <input class="texform"type="email" name="email" id="imail" required>
-
-    <label class="texform">Mensaje</label>
-   <div class="texform ">
-       <textarea name="Mensaje" id="" cols="17" rows="4">...escribe aqui</textarea> 
-   </div>
-    <label class="texform "for="talles">Talles</label>
-      <select class=""name="talles">
-            <option value="XL">XL</option>
-            <option value="L">L</option>
-            <option value="M">M</option>
-            <option value="S">S</option>
   
-        </select>
-       <br> 
-    <label class="texform" for="cantidad">Cantidad</label>
-
-        <input class=" " type="number" name="cantidad" min="0" max="12" id=""><br>
 
         
-    <label class="texform " for="Forma de envio">Forma de Envio</label>
-        
-        <div class="texform ">Envio por correo</div>
+       
+    </div>   --> -->
 
-        <input class="texform"type="radio" name="envio" id="envio">
+   
 
-        <div class="texform">Retiro en Local</div>
-
-        <input class="texform "type="radio" name="envio" id="retiro en local"><br>
-
-        <input class="boton-animacion centrado"type="submit" value="Enviar"/>
-
-        <input class="boton-animacion centrado"type="reset" value="Limpiar formulario"/>
- </Form>
-
-</div>
-<div id="mensaje" class="texform"></div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
-      <script src="./js/cards.js"></script>
-    <script src="./js/main.js"></script>
-
+    <script src="js/app.js"></script>
+    <script src="./js/card.js"></script>
 </body>
 </html>
