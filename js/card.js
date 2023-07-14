@@ -27,7 +27,7 @@ traerProductos()
 
    response.forEach(producto =>{
      let div = document.createElement("div");
-   div.className= 'four columns'
+   div.className= 'contenedorProducto'
    
    div.innerHTML = `
    <div class = "card">
@@ -38,9 +38,9 @@ traerProductos()
  <p class="precio"> Precio : $${producto.precio} <span class="u-pull-right ">$${producto.span}</span></p>
 
 
- <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
+ <a href="#"  class="u-full-width button-primary button input agregar-carrito" data-id="${producto.id}">Agregar Al Carrito</a>
   `;
 
 contenedor.appendChild(div);  
 }) })
-  
+  // Producto agregado

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body> 
  <!----------------Fonfo Animado------------------------>
@@ -24,8 +25,8 @@
 <header id="header" class="header">
     <div class="container">
         <div class="row">
-            <div class="">
-                <div id="titulo">
+            <div >
+                <div class="bold" id="titulo">
                      <h1>Titulo 1</h1>
                    </div>
                     <div id="titulo2">
@@ -35,7 +36,7 @@
             <div class="two columns u-pull-right">
                 <ul>
                     <li class="submenu">
-                            <img src="img/cart.png" id="img-carrito">
+                            <img class= "img-carrito" src="./productos/carrito-de-compras.png" id="img-carrito">
                             <div id="carrito">
                                     
                                     <table id="lista-carrito" class="u-full-width">
@@ -59,22 +60,17 @@
         </div> 
     </div>
     </header>
-<div id="lista-cursos" class="container">
-     <h1 id="encabezado" class="encabezado"></h1>
-     <div class="row">
-        <div id="contenedor"></div>
-    </div> <!--.row-->
-</div>  
-
-  
-
-        
-       
-    </div>   --> -->
-
+<div id="lista-cursos" >
+    <div  class="productosDentrocontenedor">
+        <div id="contenedor"  ></div>
+    </div>
+</div>   
+ </div>   
    
 
     <script src="js/app.js"></script>
     <script src="./js/card.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

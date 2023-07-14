@@ -98,7 +98,7 @@ function leerDatos(agregaCurso) {
 //Crear el elemento a donde vamos a agregar el curso
 
 function elementoHtml() {
-    //Se llama a laa funcion limpiar thml para obviamente limpiar el duplicado de los cursos
+    //Se llama a laa funcion limpiar thml para limpiar el duplicado de los cursos
     limpiarHtml();
     //Se itera por cada curso seleccionado y se crea el elemento donde se agregara
     carritoArray.forEach(curso => {

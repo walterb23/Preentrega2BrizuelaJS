@@ -187,9 +187,12 @@ ul {
 }
 
 .card {
+    border: 2px solid red;
+    border-radius: 30px;
     text-align: center;
-    border: 1px solid #e1e1e1;
-    background: white;
+    opacity: 0.85;
+    background: rgb(3, 225, 107);
+    margin: 1rem;
 }
 @media (min-width: 550px) {
     .card {
@@ -224,4 +227,8 @@ ul {
 display: block;
 margin-bottom: 10px;
 text-decoration: none;
+}
+.img-carrito {
+height: 5rem;
+
 }
