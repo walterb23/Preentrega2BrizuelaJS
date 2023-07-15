@@ -30,7 +30,7 @@
   /*------Mixin Banner-----------------------------------*/
 .bannerMixin {
     color:rgba(1, 250, 55, 0.863) ;
-font-size: 500%;
+font-size: 8rem;
     font-family: 'Effendi', sans-serif;
                   
     text-align: right !important;        
@@ -73,8 +73,8 @@ font-size: 500%;
   /*Fuente COURIER-----------------------------*/
 .Courier1 {
   
-    font-family: "courier-std", monospace;
-    font-style: normal;
+    font-family: "courier-std", monospace ;
+    font-style: normal!important;
     font-size: 160%;
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -110,4 +110,14 @@ display: inline-block;
     padding: 0;
     box-sizing: border-box;
   
+}
+.cajabannertitulo {
+  background-color: black;
+  opacity: .9;
+  height: 11rem;
+  width: 100%; 
+  text-align: right;
+  position: relative;
+  background-size: cover;
+
 }

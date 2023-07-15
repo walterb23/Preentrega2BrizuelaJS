@@ -1,16 +1,16 @@
 /* Titulo */
 
 let titulo = document.getElementById("titulo");  
-titulo.innerHTML = "<h1>Tercera Pre-entrega JS  </h1>";
-titulo.className = "Courier1";
-/* Titulo de la Pagina*/
+titulo.innerHTML = "<h1 class= Courier1 >Tercera Pre-entrega JS  </h1>";
+
+//Titulo de la Pagina
 let titulo2 = document.getElementById("titulo2");
-titulo2.innerHTML = "<h1>Vida-Productos</h1>";
-titulo2.className = "courier1";
-/* Variables */
+titulo2.innerHTML = "<h1 class=  bannerMixin>Vida-Productos</h1>";
+titulo2.className= 'cajabannertitulo';
+// Variables 
 const carrito = document.querySelector('#carrito');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody'); //donde se vaciara el carrito
-const listaCurso = document.querySelector('#lista-cursos');
+const listaProducto = document.querySelector('#lista-cursos');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 let carritoArray = [];
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 //Creacion del evento click
-listaCurso.addEventListener('click', (e) => {
+listaProducto.addEventListener('click', (e) => {
     e.preventDefault();
 
     if(e.target.classList.contains('agregar-carrito')) {
@@ -28,6 +28,17 @@ listaCurso.addEventListener('click', (e) => {
         const agregaCurso = e.target.parentElement.parentElement;
         // console.log(agregaCurso);
         leerDatos(agregaCurso);
+
+        // Producto agregado Sweed Alert
+ Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Agredado!!',
+            text: "Procucto agregado correctamente a carrito",
+            showConfirmButton: false,
+            timer: 1500,
+        
+          })
     };
 })
 
@@ -46,6 +57,18 @@ function eliminarCurso (e) {
                 curso.cantidad--;
                 if (curso.cantidad < 1) {
                     delete curso;
+
+              // Producto Eliminado Sweed Alert       
+             Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Eliminado!!',
+                        text: "Procucto eliminado correctamente del carrito",
+                        showConfirmButton: false,
+                        timer: 1500,
+                    
+                      })
+                         
                 }else {
                     return curso;
                 }
@@ -61,6 +84,17 @@ function eliminarCurso (e) {
 vaciarCarritoBtn.addEventListener('click', () => {
     carritoArray = [];
     limpiarHtml();
+
+// Producto Eliminado Sweed Alert  
+    Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Carrito vacio!!',
+        text: "Procuctos eliminado correctamente del carrito",
+        showConfirmButton: false,
+        timer: 2000,
+    
+      })
 })
 
 //leer los datos del curso

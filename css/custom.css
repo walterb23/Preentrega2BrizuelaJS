@@ -35,14 +35,7 @@
     color: rgb(0, 0, 0);
     text-decoration: none;
   }
-  .bannerMixin {
-    color:rgba(1, 250, 55, 0.863) ;
-font-size: 500% !important;
-    font-family: 'Effendi', sans-serif;
-                  
-    text-align: right !important;        
-}
-    
+  
 html {
     font-size: 62.5%;
 }
